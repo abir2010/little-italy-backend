@@ -24,6 +24,10 @@ app.use("/api/users", usersRoutes);
 app.use("/api/reservations", reservationsRoutes);
 app.use("/api/jobs", jobsRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Little Italy is Running Successfully");
+});
+
 // connect to db
 mongoose
   .connect(process.env.MONGO_URI, {
