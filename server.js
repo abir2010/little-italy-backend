@@ -27,6 +27,9 @@ app.use("/api/jobs", jobsRoutes);
 app.get("/", (req, res) => {
   res.send("Little Italy is Running Successfully");
 });
+app.get("/api", (req, res) => {
+  res.send("Little Italy is Running Successfully");
+});
 
 // connect to db
 mongoose
