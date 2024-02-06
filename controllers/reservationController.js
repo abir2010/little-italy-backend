@@ -22,10 +22,17 @@ const getAllReservations = async (req, res) => {
 // get todays reservation
 const getTodaysReservations = async (req, res) => {
   const day = req.query.day;
-  console.log(day);
   const query = { good: day };
   const result = await Reservation.find(query);
-  console.log(result);
+
+  res.status(200).json(result);
+};
+
+// get any dates reservation
+const getAnydaysReservations = async (req, res) => {
+  const day = req.query.day;
+  const query = { date: day };
+  const result = await Reservation.find({ date: day });
 
   res.status(200).json(result);
 };
@@ -88,4 +95,5 @@ module.exports = {
   deleteReservation,
   updateReservation,
   getTodaysReservations,
+  getAnydaysReservations,
 };
